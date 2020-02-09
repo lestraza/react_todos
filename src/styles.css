@@ -2,29 +2,45 @@ html, div, a, p {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #333a2b;
 }
 
 .header_container {
     height: 300px;
-    background: url(./images/morning_mist.jpg) 0% no-repeat;
-    background-size: cover;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 50px;
     text-align: center;
-    color: #2f322b;
     padding-top: 200px;
     box-sizing: border-box;
 }
-.todos_container {
+.user_nav {
     margin: 0 auto;
     height: 100%;
-    width: 640px;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.5)
+}
+.user_name {
+    height: 60px;
+    clear: both;
+    font-size: 40px;
+    padding: 25px; 
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.todos_container {
+    height: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
 }
 .todo_box {
+    margin: 0 auto;
     height: 40px;
+    width: 640px;
     border-bottom: 1px solid #2f322b;
     clear: both;
+    display: flex;
 }
 .todo_status {
     float: left;
@@ -33,11 +49,13 @@ html, div, a, p {
     padding: 10px; 
     margin-left: 10px;
     box-sizing: border-box;
+   
 }
 .completed { 
     background: url(./images/done.jpg) 0px 11px no-repeat;
     background-size: contain;
 }
+
 .not_completed { 
     background: url(./images/not_completed.jpg) -10px 1px no-repeat;
     background-size: cover;
@@ -45,6 +63,43 @@ html, div, a, p {
 .todo_item {
     float: left;
     padding: 15px 10px 10px 10px;
-    color: #2f322bc4;
-    font-weight: bold;
+    color: #2f322b;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+}
+.completed + div {
+    text-decoration: line-through;
+}
+.todo_delete_cart {
+    float: right;
+    padding: 2px;
+    font-size: 30px;
+}
+.popup_message {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 30px;
+    left: 30%;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0 8px 0 #2f322bc4;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.popup_message  div {
+    padding: 7px;
+    float: left;
+    width: 40px;
+    border: 2px solid #2f322b;
+    border-radius: 3px;
+    margin: 15px 0 0 45px;
+}
+.no_to_delete {
+    background-color: #8d9089;
+}
+.yes_to_delete {
+    background-color: #bcde8e;
 }
